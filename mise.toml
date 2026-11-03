@@ -1,0 +1,6 @@
+[tools]
+just = "1.59.0"
+xcodegen = { version = "2.46.0", os = ["macos"] }
+duckdb = "1.5.6"
+xh = "0.26.3"
+ripgrep = "15.2.0"

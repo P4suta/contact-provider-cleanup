@@ -1,0 +1,6 @@
+name = "Contact Provider Cleanup"
+summary = "An iPhone app that deletes the contacts a removed Contact Provider extension left in the Contacts app"
+install = "mise install\nmise x -- just identifiers"
+usage = "mise x -- just run <device-udid>"
+copyright = "Yasunobu"
+license = "MIT OR Apache-2.0"

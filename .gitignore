@@ -1,0 +1,5 @@
+/build/
+/ContactProviderCleanup.xcodeproj/
+/Config/Signing.local.xcconfig
+/Provider/identifiers.txt
+/.mise.local.toml

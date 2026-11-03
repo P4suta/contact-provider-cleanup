@@ -1,0 +1,7 @@
+// The app and extension identifiers must match the build whose contacts remain.
+CLEANUP_BUNDLE_ID = page.dial.publicphonebook.devicechecks
+CLEANUP_EXTENSION_NAME = PublicContacts
+CLEANUP_PROVIDER_NAME = Public Phonebook QA
+
+// DEVELOPMENT_TEAM stays on this machine.
+#include? "Signing.local.xcconfig"
