@@ -16,6 +16,11 @@ identifiers:
     echo "{{ csv_sha256 }}  build/contacts.csv.gz" | shasum --algorithm 256 --check
     duckdb -c "COPY (SELECT DISTINCT 'phone:+' || regexp_replace(n, '[^0-9]', '', 'g') AS id FROM (SELECT unnest(string_split(phone_numbers, ';')) AS n FROM read_csv('build/contacts.csv.gz', all_varchar = true)) WHERE regexp_replace(n, '[^0-9]', '', 'g') <> '' ORDER BY id) TO 'Provider/identifiers.txt' (HEADER false, QUOTE '')"
 
+# Build the app and its extension for any iPhone without signing.
+build:
+    xcodegen generate
+    xcodebuild -project ContactProviderCleanup.xcodeproj -scheme ContactProviderCleanup -configuration Debug -destination generic/platform=iOS -derivedDataPath build CODE_SIGNING_ALLOWED=NO build
+
 # Build, install, and start the batched deletion on a connected iPhone.
 run device:
     xcodegen generate
